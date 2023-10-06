@@ -216,6 +216,6 @@ int determinar_boton_presionado(){
 }
 ~~~
 ## Link al proyecto
-[Proeycto en Tinkercad](https://www.tinkercad.com/things/6DMRPAP320x-utnfra-spd-parcial-domiciliario-parte-1/editel?sharecode=PUOihxmVQlLQXOCIsWMr3u3JhkNV6UVm6YN7wnlPke0 "Proyecto en Tinkercad")
+[Proyecto en Tinkercad](https://www.tinkercad.com/things/6DMRPAP320x-utnfra-spd-parcial-domiciliario-parte-1/editel?sharecode=PUOihxmVQlLQXOCIsWMr3u3JhkNV6UVm6YN7wnlPke0 "Proyecto en Tinkercad")
 ## Diagrama
 ![alt text](https://github.com/KevinRivarola2/Tp-SPD/blob/main/TP1/Imagenes/diagrama_UTNFra_SPD_Parcial_domiciliario_Parte-1_.png)
