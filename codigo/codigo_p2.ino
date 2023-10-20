@@ -21,7 +21,6 @@ int sumar_anterior = 1;
 int restar_anterior = 1;
 int reset_anterior = 1;
 int switch_actual = 1;
-int switch_anterior = 1;
 
 
 
