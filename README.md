@@ -285,7 +285,7 @@ bool es_primo(int numero){
 } 
 ~~~
 
-#### el resto de las funciones se mantienen igual
+#### el resto de las funciones sin cambios significativos.
 ## Link al proyecto
 [Proyecto en Tinkercad](https://www.tinkercad.com/things/3ftRE9gDsRc-utnfra-spd-parcial-domiciliario-parte-2)
 ## Diagrama
