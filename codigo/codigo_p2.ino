@@ -30,7 +30,6 @@ int switch_anterior = 1;
 //Configuracion de pines.
 void setup()
 {
-  Serial.begin(9600);
   pinMode(BOTON_SUMAR, INPUT_PULLUP);
   pinMode(SWITCH, INPUT_PULLUP);
   pinMode(BOTON_RESET, INPUT_PULLUP);
@@ -63,7 +62,6 @@ void loop(){
   if(boton_presionado == BOTON_RESET){
     contador = 0;
   }
-  Serial.println(es_primo(contador));
   mostrar_contador(contador);  
 }
 
