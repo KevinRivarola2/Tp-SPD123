@@ -1,10 +1,10 @@
 # Tp-SPD
-![alt text](https://github.com/KevinRivarola2/Tp-SPD/blob/main/TP1/Imagenes/9b8084d5-b1b7-4b05-be03-3ce359a2cd41.jpg)
+![alt text](https://github.com/TomySand/utnfra-spd-parcial1/blob/main/imagenes/portada_p1.jpg)
 ## Integrantes
 * Kevin Rivarola
 * Tomás Sandoval
-## Proyecto: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación
-![alt text](https://github.com/KevinRivarola2/Tp-SPD/blob/main/TP1/Imagenes/d3ab24f5-09f7-40dc-a2bc-bea4cfb72552.jpg)
+## Parte 1: Contador de 0 a 99 con Display 7 Segmentos y Multiplexación
+![alt text](https://github.com/TomySand/utnfra-spd-parcial1/blob/main/imagenes/placa_p1.jpg)
 ## Descripción
 Placa arduino que permite al usuario contar numeros del 0 al 99 haciendo uso de tres botones mostrandole los numeros en dos displays de 7 segmentos.
 los botones son:
@@ -218,4 +218,78 @@ int determinar_boton_presionado(){
 ## Link al proyecto
 [Proyecto en Tinkercad](https://www.tinkercad.com/things/6DMRPAP320x-utnfra-spd-parcial-domiciliario-parte-1/editel?sharecode=PUOihxmVQlLQXOCIsWMr3u3JhkNV6UVm6YN7wnlPke0 "Proyecto en Tinkercad")
 ## Diagrama
-![alt text](https://github.com/KevinRivarola2/Tp-SPD/blob/main/TP1/Imagenes/diagrama_UTNFra_SPD_Parcial_domiciliario_Parte-1_.png)
+![alt text](https://github.com/TomySand/utnfra-spd-parcial1/blob/main/imagenes/diagrama_p1.png)
+
+
+
+![alt text](https://github.com/TomySand/utnfra-spd-parcial1/blob/main/imagenes/portada_p2.png)
+## Parte 2: Modificación con Interruptor Deslizante y Números Primos
+![alt text](https://github.com/TomySand/utnfra-spd-parcial1/blob/main/imagenes/placa_p2.png)
+## Descripción
+Placa arduino que permite al usuario contar numeros del 0 al 99 haciendo uso de dos botones y un switch, mostrandole los numeros en dos displays de 7 segmentos.
+los botones son:
+- sumar 1
+- reiniciar conteo
+
+El switch cumple la funcion de intercambiar entre:
+- conteo de numeros de uno en uno
+- conteo de numeros primos
+
+## Codigo
+### Función principal
+Guarda el estado del switch en switch_actual.  
+Llama a 'determinar_boton_presionado' y guarda el numero del pin asociado al boton presionado en 'boton_presionado'.      
+Si BOTON_SUMAR fue presionado y el estado del switch es 0 se aumenta el contador hasta que sea numero primo.  
+Si BOTON_SUMAR fue presionado y el estado del switch es 1 se aumenta el contador en 1.  
+Si BOTON_SUMAR fue presionado y el contador es mayor a 99 se reinicia en 0.  
+Finalmente llama a 'mostrar_contador' pasandole la variable 'contador' como argumento.    
+~~~
+void loop(){
+  switch_actual = digitalRead(SWITCH);
+  int boton_presionado = determinar_boton_presionado();
+  if(boton_presionado == BOTON_SUMAR){
+    if (switch_actual == 0){
+     do{contador++;}while(es_primo(contador) == 0);
+    }
+    else{
+      contador++;  
+    }
+    if (contador > 99){
+      contador = 0;
+    }
+  }
+  if(boton_presionado == BOTON_RESET){
+    contador = 0;
+  }
+  mostrar_contador(contador);  
+}
+~~~
+### es_primo
+Función encargada de determinar si un numero es primo.  
+Recibe un numero y devuelve un booleano.   
+Si el numero es 1, 0 o negativo retorna false.  
+Caso contrario comienza a dividir el numero por 2 hasta la raiz del numero,   
+si alguna de las divisiones no tiene resto entonces el numero no es primo, retorna false.  
+si ninguna de las divisiones dio resto 0 entonces el numero es primo, retorna true.  
+~~~
+bool es_primo(int numero){
+  if(numero <= 1){
+    return false;
+  }
+  for (int i = 2; i <= sqrt(numero); i++) {
+    if (numero % i == 0){
+      return false;
+    }
+  }
+  return true;
+} 
+~~~
+
+#### el resto de las funciones se mantienen igual
+## Link al proyecto
+[Proyecto en Tinkercad](https://www.tinkercad.com/things/3ftRE9gDsRc-utnfra-spd-parcial-domiciliario-parte-2)
+## Diagrama
+![alt text](https://github.com/TomySand/utnfra-spd-parcial1/blob/main/imagenes/diagrama_p2.png)
+
+
+
